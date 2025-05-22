@@ -80,7 +80,10 @@ class DAHSensor(CoordinatorEntity, SensorEntity):
     ) -> None:
         super().__init__(coordinator)
         self._attr_unique_id = f"dah_su800d_{config_entry_id}_{source}_{key}"
-        self._attr_name = f"{description['name']}"
+        self._attr_translation_key = key
+        self._attr_translation_placeholders = {}
+        self._attr_has_entity_name = True
+        self._attr_translation_key = f"{source}.{key}"}"
         self._attr_icon = description.get("icon")
         self._attr_unit_of_measurement = description.get("unit")
         self.entity_description_key = key
