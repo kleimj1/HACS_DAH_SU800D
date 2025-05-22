@@ -1,0 +1,34 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Verbindung zu DAH SU800D",
+        "description": "Gib deine Zugangsdaten und die Stations-ID deiner DAH Solar-Anlage ein.",
+        "data": {
+          "username": "Benutzername (E-Mail)",
+          "password": "Passwort",
+          "station_id": "Stations-ID",
+          "lang": "Sprache"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Ungültige Zugangsdaten",
+      "cannot_connect": "Verbindung fehlgeschlagen",
+      "unknown": "Unerwarteter Fehler"
+    },
+    "abort": {
+      "already_configured": "Diese Station ist bereits konfiguriert."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "DAH SU800D Optionen",
+        "data": {
+          "lang": "Sprache"
+        }
+      }
+    }
+  }
+}
