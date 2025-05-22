@@ -1,7 +1,7 @@
 {
   "domain": "dah_su800d",
   "name": "DAH SU800D",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "documentation": "https://github.com/kleimj1/HACS_DAH_SU800D",
   "issue_tracker": "https://github.com/kleimj1/HACS_DAH_SU800D/issues",
   "requirements": [
