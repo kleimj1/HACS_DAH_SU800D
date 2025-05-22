@@ -1,1 +1,19 @@
-
+{
+  "title": "DAH SU800D",
+  "description": "Integration für DAH Solar Balkon-Kraftwerke (Modell SU800D) über die DAH Cloud API.",
+  "config_flow": {
+    "step": {
+      "user": {
+        "title": "Verbindung zur DAH SU800D Cloud",
+        "description": "Bitte gib deine DAH-Zugangsdaten und die Stations-ID ein, um die Integration zu konfigurieren."
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "DAH SU800D Optionen"
+      }
+    }
+  }
+}
