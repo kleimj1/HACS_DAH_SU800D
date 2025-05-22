@@ -1,0 +1,34 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to DAH SU800D",
+        "description": "Enter your credentials and station ID for your DAH Solar system.",
+        "data": {
+          "username": "Username (E-Mail)",
+          "password": "Password",
+          "station_id": "Station ID",
+          "lang": "Language"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Invalid authentication",
+      "cannot_connect": "Connection failed",
+      "unknown": "Unexpected error"
+    },
+    "abort": {
+      "already_configured": "This station is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "DAH SU800D Options",
+        "data": {
+          "lang": "Language"
+        }
+      }
+    }
+  }
+}
