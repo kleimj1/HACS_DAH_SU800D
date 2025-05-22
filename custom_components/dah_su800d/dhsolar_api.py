@@ -4,6 +4,9 @@ from typing import Any
 
 import aiohttp
 from aiohttp import ClientSession, ClientResponseError
+from Crypto.PublicKey import RSA
+from Crypto.Cipher import PKCS1_v1_5
+import base64
 
 from .const import (
     BASE_URL,
@@ -15,6 +18,25 @@ from .const import (
 )
 
 _LOGGER = logging.getLogger(__name__)
+
+# Public Key aus Web-JavaScript extrahiert
+PUBLIC_KEY_B64 = (
+    "MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAKoR8mX0rGKLqzcWmOzbfj64K8ZIgOdHnzkXSOVOZbFu/"
+    "TJhZ7rFAN+eaGkl3C4buccQd/EjEsj9ir7ijT7h96MCAwEAAQ=="
+)
+
+PUBLIC_KEY_PEM = (
+    "-----BEGIN PUBLIC KEY-----\n"
+    + PUBLIC_KEY_B64 +
+    "\n-----END PUBLIC KEY-----"
+)
+
+def encrypt_password_rsa(password: str) -> str:
+    """Verschlüsselt das Passwort wie die Web-Login-Funktion."""
+    key = RSA.import_key(PUBLIC_KEY_PEM)
+    cipher = PKCS1_v1_5.new(key)
+    encrypted = cipher.encrypt(password.encode("utf-8"))
+    return base64.b64encode(encrypted).decode("utf-8")
 
 
 class DAHSolarClient:
@@ -32,9 +54,11 @@ class DAHSolarClient:
     async def async_login(self) -> None:
         """Melde dich an und speichere den Access Token."""
         url = f"{BASE_URL}{LOGIN_ENDPOINT}"
+        encrypted_password = encrypt_password_rsa(self.password)
+
         payload = {
             "username": self.username,
-            "password": self.password,
+            "password": encrypted_password,
             "clientId": self._client_id,
             "grantType": "terminal",
             "lang": self.lang,
