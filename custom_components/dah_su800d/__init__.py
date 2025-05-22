@@ -1,4 +1,6 @@
 """The DAH SU800D integration."""
+from homeassistant.helpers.aiohttp_client import async_get_clientsession
+
 from __future__ import annotations
 
 import logging
