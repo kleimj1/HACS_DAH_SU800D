@@ -30,5 +30,64 @@
         }
       }
     }
+  },
+  "sensor": {
+    "equipment": {
+      "power": {
+        "name": "PV Power"
+      },
+      "electricity": {
+        "name": "PV Energy (Today)"
+      },
+      "cumulativeElectricity": {
+        "name": "PV Total Energy"
+      },
+      "installedPower": {
+        "name": "Installed PV Capacity"
+      },
+      "emissionReduction": {
+        "name": "CO₂ Reduction (Today)"
+      },
+      "totalEmissionReduction": {
+        "name": "Total CO₂ Reduction"
+      },
+      "profit": {
+        "name": "Today's Profit"
+      },
+      "currency": {
+        "name": "Currency"
+      }
+    },
+    "status": {
+      "normalNo": {
+        "name": "Devices Online"
+      },
+      "offlineNo": {
+        "name": "Devices Offline"
+      },
+      "faultNo": {
+        "name": "Devices with Fault"
+      },
+      "warningNo": {
+        "name": "Devices with Warning"
+      }
+    },
+    "info": {
+      "stationName": {
+        "name": "Plant Name"
+      },
+      "days": {
+        "name": "Days Running"
+      },
+      "userName": {
+        "name": "User Name"
+      },
+      "address": {
+        "name": "Location"
+      },
+      "localTime": {
+        "name": "Local Time"
+      }
+    }
   }
 }
