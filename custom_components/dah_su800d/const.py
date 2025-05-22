@@ -18,42 +18,42 @@ USERINFO_ENDPOINT = "/dh/stationBoard/stationUserInfo"
 # Sensor Keys aus /equipmentStatistic
 EQUIPMENT_SENSORS = {
     "power": {
-        "name": "PV Leistung",
+        "name_key": "sensor.equipment.power.name",
         "unit": "W",
         "icon": "mdi:solar-power",
     },
     "electricity": {
-        "name": "PV Energie (heute)",
+        "name_key": "sensor.equipment.electricity.name",
         "unit": "kWh",
         "icon": "mdi:counter",
     },
     "cumulativeElectricity": {
-        "name": "PV Energie gesamt",
+        "name_key": "sensor.equipment.cumulativeElectricity.name",
         "unit": "kWh",
         "icon": "mdi:transmission-tower-export",
     },
     "installedPower": {
-        "name": "Installierte PV-Leistung",
+        "name_key": "sensor.equipment.installedPower.name",
         "unit": "kWp",
         "icon": "mdi:solar-panel-large",
     },
     "emissionReduction": {
-        "name": "CO₂-Ersparnis (heute)",
+        "name_key": "sensor.equipment.emissionReduction.name",
         "unit": "kg",
         "icon": "mdi:leaf",
     },
     "totalEmissionReduction": {
-        "name": "CO₂-Ersparnis gesamt",
+        "name_key": "sensor.equipment.totalEmissionReduction.name",
         "unit": "kg",
         "icon": "mdi:leaf-circle",
     },
     "profit": {
-        "name": "Heutiger Gewinn",
+        "name_key": "sensor.equipment.profit.name",
         "unit": "€",
         "icon": "mdi:currency-eur",
     },
     "currency": {
-        "name": "Währung",
+        "name_key": "sensor.equipment.currency.name",
         "unit": "",
         "icon": "mdi:currency-sign",
     },
@@ -62,22 +62,22 @@ EQUIPMENT_SENSORS = {
 # Sensor Keys aus /stationState
 STATUS_SENSORS = {
     "normalNo": {
-        "name": "Geräte online",
+        "name_key": "sensor.status.normalNo.name",
         "unit": "",
         "icon": "mdi:check-circle-outline",
     },
     "offlineNo": {
-        "name": "Geräte offline",
+        "name_key": "sensor.status.offlineNo.name",
         "unit": "",
         "icon": "mdi:close-circle-outline",
     },
     "faultNo": {
-        "name": "Geräte mit Fehler",
+        "name_key": "sensor.status.faultNo.name",
         "unit": "",
         "icon": "mdi:alert-circle-outline",
     },
     "warningNo": {
-        "name": "Geräte mit Warnung",
+        "name_key": "sensor.status.warningNo.name",
         "unit": "",
         "icon": "mdi:alert-outline",
     },
@@ -86,27 +86,27 @@ STATUS_SENSORS = {
 # Sensor Keys aus /stationInfo
 INFO_SENSORS = {
     "stationName": {
-        "name": "Anlagenname",
+        "name_key": "sensor.info.stationName.name",
         "unit": "",
         "icon": "mdi:home-solar-panel",
     },
     "days": {
-        "name": "Anlagetage",
+        "name_key": "sensor.info.days.name",
         "unit": "Tage",
         "icon": "mdi:calendar",
     },
     "userName": {
-        "name": "Benutzername",
+        "name_key": "sensor.info.userName.name",
         "unit": "",
         "icon": "mdi:account",
     },
     "address": {
-        "name": "Standort",
+        "name_key": "sensor.info.address.name",
         "unit": "",
         "icon": "mdi:map-marker",
     },
     "localTime": {
-        "name": "Lokale Zeit",
+        "name_key": "sensor.info.localTime.name",
         "unit": "",
         "icon": "mdi:clock-outline",
     },
