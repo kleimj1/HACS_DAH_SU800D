@@ -1,12 +1,11 @@
 """The DAH SU800D integration."""
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-
 from __future__ import annotations
 
 import logging
 
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
+from homeassistant.helpers.aiohttp_client import async_get_clientsession
 
 from .const import DOMAIN, PLATFORMS
 from .dhsolar_api import DAHSolarClient
@@ -25,7 +24,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         password=entry.data["password"],
         station_id=entry.data["station_id"],
         lang=entry.data.get("lang", 3),
-        session=hass.helpers.aiohttp_client.async_get_clientsession(hass),
+        session=async_get_clientsession(hass),
     )
 
     try:
@@ -47,4 +46,3 @@ async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     if unloaded:
         hass.data[DOMAIN].pop(entry.entry_id, None)
     return unloaded
-#
