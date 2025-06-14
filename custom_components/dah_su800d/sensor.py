@@ -35,7 +35,12 @@ async def async_setup_entry(
         try:
             return await client.async_get_all_data()
         except Exception as err:
-            raise UpdateFailed(f"Fehler beim Abrufen der DAH-Daten: {err}") from err
+            _LOGGER.warning("Abruf fehlgeschlagen – versuche Re-Login: %s", err)
+            try:
+                await client.async_login()
+                return await client.async_get_all_data()
+            except Exception as login_err:
+                raise UpdateFailed(f"Re-Login fehlgeschlagen: {login_err}") from login_err
 
     coordinator = DataUpdateCoordinator(
         hass,
