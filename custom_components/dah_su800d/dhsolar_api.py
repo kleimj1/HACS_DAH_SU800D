@@ -92,7 +92,7 @@ class DAHSolarClient:
                 resp.raise_for_status()
                 data = await resp.json()
                 if data.get("code") != 200:
-                    raise Exception(f"Fehlerhafte Antwort: {data}")
+                    raise Exception(f"DAH API Fehler {data.get('code')}: {data.get('msg')}")
                 return data.get("data", {})
         except ClientResponseError as e:
             _LOGGER.error("HTTP-Fehler: %s", e)
